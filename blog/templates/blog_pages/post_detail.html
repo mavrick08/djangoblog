@@ -1,0 +1,16 @@
+{% extends 'blog_pages/base.html' %}
+{% block content %}
+    <div class="post">
+                <div class="information">
+                    <h2>Title is: {{ post.title }}</h2>
+                    <p><b>Description: </b> {{ post.text }}</p>
+                    <p>Published Date:{{ post.published_date }}</p>
+
+                    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>EDIT</a>
+                        &nbsp; &nbsp;
+
+                    <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove-sign"></span>DELETE</a>
+                    
+                </div>
+            </div>
+{% endblock %}
